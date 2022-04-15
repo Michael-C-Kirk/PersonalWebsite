@@ -3,12 +3,14 @@
 * {
   margin: 0;
   font-family: "PT Sans", sans-serif;
-  color: #f8f0e3;
+  color: #F8F0E3;
 }
 
+/*navbar*/
 .navbar {
   align-items: center;
-  background-color: #070F1C;
+  background-color: #3a3a3a;
+  border-bottom: 1px solid #F8F0E3;
   display: flex;
   font-size: 26px;
   margin: 0 auto;
@@ -26,5 +28,5 @@
 }
 
 .navbar a:hover {
-  color: #91c399;
+  color: #99cab5;
 }
