@@ -12,7 +12,7 @@ function Navbar() {
             </div>
 
             <div className="socials">
-                <IconContext.Provider value={{ color: "white" }}>
+                <IconContext.Provider value={{ className: "icons" }}>
                     <a href="https://github.com/Michael-C-Kirk">
                         <BsGithub />
                     </a>

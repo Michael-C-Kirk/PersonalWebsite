@@ -3,7 +3,6 @@
 * {
   margin: 0;
   font-family: "PT Sans", sans-serif;
-  color: #F8F0E3;
 }
 
 /*navbar*/
@@ -25,7 +24,12 @@
   margin-left: auto;
 }
 
+.navbar .socials .icons:hover {
+  color: #99cab5;
+}
+
 .navbar a {
+  color: #F8F0E3;
   margin-left: 16px;
   padding: 6px;
   text-decoration: none;
