@@ -5,7 +5,7 @@
   font-family: "PT Sans", sans-serif;
 }
 
-/*navbar*/
+/*~~~~~~~~~~~ navbar ~~~~~~~~~~~*/
 .navbar {
   align-items: center;
   background-color: #3a3a3a;
@@ -37,4 +37,25 @@
 
 .navbar a:hover {
   color: #99cab5;
+}
+
+/*~~~~~~~~~~~ home ~~~~~~~~~~~*/
+.home {
+  align-content: space-around;
+  background-color: #F8F0E3;
+  font-size: x-large;
+  flex-grow: 1;
+  height: 100vh;
+  margin: 0;
+}
+
+.home .profilepic {
+  width: 150px;
+  height: 150px;
+}
+
+.home .profilepic img {
+  border-radius: 50%;
+  height: auto;
+  width: 100%;
 }
