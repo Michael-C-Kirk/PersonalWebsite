@@ -12,6 +12,7 @@
   border-bottom: 1px solid #F8F0E3;
   display: flex;
   font-size: 26px;
+  justify-content: space-evenly;
   margin: 0 auto;
   padding: 2vh;
   position: sticky;
