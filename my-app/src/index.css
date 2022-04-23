@@ -13,7 +13,7 @@
   display: flex;
   font-size: 26px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 2vh;
   position: sticky;
   top: 0;
 }
@@ -43,21 +43,27 @@
 
 /*~~~~~~~~~~~ home ~~~~~~~~~~~*/
 .home {
-  align-content: space-around;
-  background-color: #F8F0E3;
-  font-size: x-large;
-  flex-grow: 1;
-  height: 100vh;
-  margin: 0;
+  align-items: center;
+  background: url(./images/svg.png);
+  background-size: cover;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
-.home .profilepic {
-  width: 150px;
-  height: 150px;
+.home .greeting {
+  font-size: larger;
+  text-align: center;
 }
 
-.home .profilepic img {
-  border-radius: 50%;
+.home .profile-pic {
+  align-self: flex-start;
+}
+
+.home .profile-pic img {
+  display: block;
+  width: auto;
   height: auto;
-  width: 100%;
+  max-width: 93vh;
+  max-height: 93vh;
 }
