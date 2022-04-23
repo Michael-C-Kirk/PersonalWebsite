@@ -1,14 +1,21 @@
 import { IconContext } from "react-icons";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 function Navbar() {
     return (
         <nav className="navbar">
             <div className="links">
-                <a href="/">Home</a>
-                <a href="/projects">Projects</a>
-                <a href="/technicalskills">Technical Skills</a>
-                <a href="/contact">Contact</a>
+                <ul>
+                    <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-70} duration={500}>
+                        Home
+                    </Link>
+                    <a href="/projects">Projects</a>
+                    <a href="/technicalskills">Technical Skills</a>
+                    <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-70} duration={500}>
+                        Contact
+                    </Link>
+                </ul>
             </div>
 
             <div className="socials">
