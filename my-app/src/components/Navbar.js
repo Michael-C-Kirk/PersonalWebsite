@@ -10,7 +10,9 @@ function Navbar() {
                     <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-70} duration={500}>
                         Home
                     </Link>
-                    <a href="/projects">Projects</a>
+                    <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
+                        Projects
+                    </Link>
                     <a href="/technicalskills">Technical Skills</a>
                     <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-70} duration={500}>
                         Contact
