@@ -1,4 +1,4 @@
-import profilepic from './images/GettyMichael_ccexpress.png'
+import profilepic from '../images/GettyMichael_ccexpress.png'
 
 function Home() {
     return (
