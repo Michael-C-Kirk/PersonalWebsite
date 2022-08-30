@@ -1,3 +1,6 @@
+import { IconContext } from "react-icons";
+import { BsGithub } from "react-icons/bs";
+
 function Projects() {
     return (
         <div className="projects-grid">
@@ -11,7 +14,11 @@ function Projects() {
                     </p>
                 </div>
                 <div className="card-footer">
-
+                    <IconContext.Provider value={{ size: "2em", className: "links" }}>
+                        <a href="https://github.com/Michael-C-Kirk">
+                            <BsGithub />
+                        </a>
+                    </IconContext.Provider>
                 </div>
             </div>
 

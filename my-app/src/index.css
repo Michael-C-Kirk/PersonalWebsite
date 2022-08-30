@@ -75,6 +75,7 @@
   align-items: flex-start;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 10px;
   min-height: 100vh;
 }
 
@@ -82,8 +83,8 @@
   --padding: 1rem;
   background: #F8F0E3;
   border-radius: .25rem;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 2px);
-  max-width: 400px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  max-width: 500px;
   overflow: hidden;
 }
 
@@ -92,6 +93,11 @@
   padding: var(--padding);
   padding-bottom: 0;
   margin-bottom: .5rem;
+}
+
+.card-header.card-image {
+  padding: 0;
+  overflow: hidden;
 }
 
 .card-body {
@@ -105,19 +111,19 @@
   padding-top: 0;
 }
 
-.card-header.card-image {
-  padding: 0;
-  overflow: hidden;
-}
-
 .card-header.card-image img {
   background-size: cover;
   display: block;
   width: 100%;
-  max-height: 200px;
+  max-height: 300px;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   object-position: center;
+  transition: 200ms transform ease-in-out;
+}
+
+.card:hover>.card-header.card-image>img {
+  transform: scale(1.025);
 }
 
 /*~~~~~~~~~~~ contact ~~~~~~~~~~~*/
