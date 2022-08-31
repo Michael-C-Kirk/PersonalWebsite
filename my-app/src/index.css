@@ -41,8 +41,17 @@ body {
   margin-left: auto;
 }
 
-.navbar .socials .icons:hover {
-  color: var(--secondarycolor);
+.navbar .linkedin {
+  color: #0072b1;
+}
+
+.navbar .resume {
+  color: #FA0C00;
+}
+
+.navbar .linkedin:hover,
+.resume:hover {
+  filter: brightness(.8);
 }
 
 .navbar a {

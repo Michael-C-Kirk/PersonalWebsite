@@ -1,6 +1,7 @@
 import { IconContext } from "react-icons";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsFillFilePdfFill } from "react-icons/bs";
 import { Link, animateScroll as scroll } from "react-scroll";
+import resume from "../documents/Michael_Kirk_Resume.pdf";
 
 function Navbar() {
     return (
@@ -21,16 +22,24 @@ function Navbar() {
             </div>
 
             <div className="socials">
-                <IconContext.Provider value={{ className: "icons" }}>
+                <IconContext.Provider value={{ className: "github" }}>
                     <a href="https://github.com/Michael-C-Kirk">
                         <BsGithub />
                     </a>
-                    <a href="https://www.linkedin.com/in/michael-kirk-4211a0152/">
+                </IconContext.Provider>
+                <IconContext.Provider value={{ className: "linkedin" }}>
+                    <a href="https://www.linkedin.com/in/michael-c-kirk/">
                         <BsLinkedin />
                     </a>
                 </IconContext.Provider>
+                <IconContext.Provider value={{ className: "resume" }}>
+                    <a href={resume}>
+                        <BsFillFilePdfFill />
+                    </a>
+                </IconContext.Provider>
+
             </div>
-        </nav>
+        </nav >
     );
 }
 
