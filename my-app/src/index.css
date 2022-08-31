@@ -60,18 +60,32 @@ body {
 .home {
   align-items: center;
   background-size: cover;
+  background-image: linear-gradient(var(--secondarycolor), var(--offwhite));
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
-.home .greeting {
-  font-size: larger;
-  text-align: center;
+.home .greeting-card {
+  background: var(--offwhite);
+  border-radius: .25rem;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  max-width: 40vw;
+  margin-top: 1rem;
+  overflow: hidden;
 }
 
+.home .greeting {
+  padding: 3rem;
+  font-size: larger;
+  text-align: center;
+  align-self: center;
+}
+
+.home .profile-pic-container {}
+
 .home .profile-pic {
-  align-self: flex-start;
+  align-self: center;
 }
 
 .home .profile-pic img {
