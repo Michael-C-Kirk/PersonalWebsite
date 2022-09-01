@@ -1,6 +1,6 @@
 import { IconContext } from "react-icons";
 import { BsGithub } from "react-icons/bs";
-import icon1 from '../images/FoodrImage.png'
+import icon1 from '../images/Foodr.gif'
 
 function Projects() {
     return (
