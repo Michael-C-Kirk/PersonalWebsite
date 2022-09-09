@@ -6,18 +6,29 @@ import resume from "../documents/Michael_Kirk_Resume.pdf";
 function Navbar() {
     return (
         <nav className="navbar">
-            <div className="links">
-                <ul>
-                    <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-70} duration={500}>
-                        Home
-                    </Link>
-                    <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
-                        Projects
-                    </Link>
-                    <a href="/technicalskills">Technical Skills</a>
-                    <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-70} duration={500}>
-                        Contact
-                    </Link>
+            <div className="hamburger">
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </div>
+            <div className="links-container">
+                <ul className="links">
+                    <li>
+                        <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-70} duration={500}>
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
+                            Projects
+                        </Link>
+                    </li>
+                    <li><a href="/technicalskills">Technical Skills</a></li>
+                    <li>
+                        <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-70} duration={500}>
+                            Contact
+                        </Link>
+                    </li>
                 </ul>
             </div>
 

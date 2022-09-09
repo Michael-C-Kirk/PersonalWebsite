@@ -20,13 +20,16 @@ body {
 }
 
 /*~~~~~~~~~~~ navbar ~~~~~~~~~~~*/
+li {
+  list-style: none;
+}
+
 .navbar {
   align-items: center;
   background-color: var(--offwhite);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
   display: flex;
   font-size: 26px;
-  justify-content: space-evenly;
   margin: 0 auto;
   padding: 2vh;
   position: sticky;
@@ -34,23 +37,34 @@ body {
   z-index: 10;
 }
 
-.navbar .links {
+.links-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.links {
   margin-right: auto;
 }
 
-.navbar .socials {
-  margin-left: auto;
+.links li {
+  display: inline;
 }
 
-.navbar .linkedin {
+.socials {
+  margin-left: auto;
+  display: flex;
+}
+
+.linkedin {
   color: #0072b1;
 }
 
-.navbar .resume {
+.resume {
   color: #FA0C00;
 }
 
-.navbar .linkedin:hover,
+.linkedin:hover,
 .resume:hover {
   filter: brightness(.8);
 }
@@ -64,6 +78,33 @@ body {
 
 .navbar a:hover {
   color: var(--secondarycolor);
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--secondarycolor);
+}
+
+@media screen and (max-width: 768px) {
+  .links {
+    display: None;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+
 }
 
 /*~~~~~~~~~~~ home ~~~~~~~~~~~*/
