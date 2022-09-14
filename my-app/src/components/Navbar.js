@@ -1,16 +1,33 @@
+import { useState, useEffect } from "react";
 import { IconContext } from "react-icons";
 import { BsGithub, BsLinkedin, BsFillFilePdfFill } from "react-icons/bs";
 import { Link, animateScroll as scroll } from "react-scroll";
 import resume from "../documents/Michael_Kirk_Resume.pdf";
 
 function Navbar() {
+    const [hamburgerDivClassName, setHamburgerDivClassName] = useState("hamburger");
+
+    useEffect(() => {
+        "Everything in here happens only once after initial render of page"
+    }, []);
+
+    function toggleNavbarMenu() {
+        if (hamburgerDivClassName === "hamburger") {
+            setHamburgerDivClassName("hamburger-active")
+        }
+        else {
+            setHamburgerDivClassName("hamburger")
+        }
+    }
+
     return (
         <nav className="navbar">
-            <div className="hamburger">
+            <div className={hamburgerDivClassName} onClick={() => toggleNavbarMenu()}>
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
             </div>
+
             <div className="links-container">
                 <ul className="links">
                     <li>
