@@ -1,48 +1,35 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IconContext } from "react-icons";
 import { BsGithub, BsLinkedin, BsFillFilePdfFill } from "react-icons/bs";
 import { Link, animateScroll as scroll } from "react-scroll";
 import resume from "../documents/Michael_Kirk_Resume.pdf";
 
-function Navbar() {
-    const [hamburgerDivClassName, setHamburgerDivClassName] = useState("hamburger");
-
-    useEffect(() => {
-        "Everything in here happens only once after initial render of page"
-    }, []);
-
-    function toggleNavbarMenu() {
-        if (hamburgerDivClassName === "hamburger") {
-            setHamburgerDivClassName("hamburger-active")
-        }
-        else {
-            setHamburgerDivClassName("hamburger")
-        }
-    }
+function Navbar(props) {
+    const [isNavExpanded, setIsNavExpanded] = useState(false);
 
     return (
         <nav className="navbar">
-            <div className={hamburgerDivClassName} onClick={() => toggleNavbarMenu()}>
+            <div className="hamburger" onClick={() => setIsNavExpanded(!isNavExpanded)}>
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
             </div>
 
-            <div className="links-container">
+            <div className={isNavExpanded ? "links-container-active" : "links-container"}>
                 <ul className="links">
                     <li>
-                        <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-70} duration={500}>
+                        <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-50} duration={500}>
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-70} duration={500}>
+                        <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-50} duration={500}>
                             Projects
                         </Link>
                     </li>
                     <li><a href="/technicalskills">Technical Skills</a></li>
                     <li>
-                        <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-70} duration={500}>
+                        <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-50} duration={500}>
                             Contact
                         </Link>
                     </li>
