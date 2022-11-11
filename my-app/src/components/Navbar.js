@@ -1,22 +1,64 @@
-import { useState, useEffect, useRef } from "react";
+import { isInaccessible } from "@testing-library/react";
+import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { IconContext } from "react-icons";
 import { BsGithub, BsLinkedin, BsFillFilePdfFill } from "react-icons/bs";
 import { Link, animateScroll as scroll } from "react-scroll";
 import resume from "../documents/Michael_Kirk_Resume.pdf";
 
-function Navbar(props) {
+//Custom Hook that will update screen width
+function useWindowSize() {
+    const [size, setSize] = useState(0);
+    useLayoutEffect(() => {
+        function updateSize() {
+            setSize(window.innerWidth);
+        }
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
+    return [size];
+}
+
+function Navbar() {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
+    const linksRef = useRef(null);
+    const [windowWidth, setWindowWidth] = useWindowSize();
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 769)
+
+    console.log(windowWidth);
+
+    useEffect(() => {
+        if (windowWidth > 768) {
+            linksRef.current.style.transform = ""
+            linksRef.current.style.transition = ""
+            if (isNavExpanded) {
+                setIsNavExpanded(false);
+            }
+        }
+
+    })
+
+    function animateMobileLinksContainer() {
+        if (!isNavExpanded) {
+            linksRef.current.style.transform = "translateX(46vw)"
+            linksRef.current.style.transition = "transform .5s ease-in-out"
+        }
+        else {
+            linksRef.current.style.transform = "translateX(-46vw)"
+            linksRef.current.style.transition = "transform .5s ease-in-out"
+        }
+    }
 
     return (
         <nav className="navbar">
-            <div className="hamburger" onClick={() => setIsNavExpanded(!isNavExpanded)}>
+            <div className={isNavExpanded ? "hamburger-active" : "hamburger"} onClick={() => { setIsNavExpanded(!isNavExpanded); animateMobileLinksContainer() }}>
                 <span className="bar"></span>
                 <span className="bar"></span>
                 <span className="bar"></span>
             </div>
 
-            <div className={isNavExpanded ? "links-container-active" : "links-container"}>
-                <ul className="links">
+            <div className="links-container">
+                <ul className="links" ref={linksRef}>
                     <li>
                         <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-50} duration={500}>
                             Home
