@@ -99,7 +99,7 @@ li {
 @media screen and (max-width: 768px) {
   .links-container ul {
     position: absolute;
-    left: -46vw;
+    left: -75vw;
     top: 5vh;
     height: 100vh;
     width: 40vw;
@@ -147,6 +147,7 @@ li {
   max-width: 40vw;
   margin-top: 1rem;
   overflow: hidden;
+  min-width: 300px;
 }
 
 .home .greeting {

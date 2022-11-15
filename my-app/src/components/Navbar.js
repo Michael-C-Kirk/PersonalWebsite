@@ -23,9 +23,6 @@ function Navbar() {
     const [isNavExpanded, setIsNavExpanded] = useState(false);
     const linksRef = useRef(null);
     const [windowWidth, setWindowWidth] = useWindowSize();
-    const [isMobile, setIsMobile] = useState(window.innerWidth < 769)
-
-    console.log(windowWidth);
 
     useEffect(() => {
         if (windowWidth > 768) {
@@ -40,11 +37,11 @@ function Navbar() {
 
     function animateMobileLinksContainer() {
         if (!isNavExpanded) {
-            linksRef.current.style.transform = "translateX(46vw)"
+            linksRef.current.style.transform = "translateX(75vw)"
             linksRef.current.style.transition = "transform .5s ease-in-out"
         }
         else {
-            linksRef.current.style.transform = "translateX(-46vw)"
+            linksRef.current.style.transform = "translateX(-75vw)"
             linksRef.current.style.transition = "transform .5s ease-in-out"
         }
     }
