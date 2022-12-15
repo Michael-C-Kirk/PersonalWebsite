@@ -1,39 +1,30 @@
 import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 
 function Contact() {
-    const [inputFields, setInputFields] = useState({ name: "", email: "", message: "" })
-    const [name, setName] = useState("")
-    const [email, setEmail] = useState("")
-    const [message, setMessage] = useState("")
+    const form = useRef();
 
-    function handleFormSubmit(event) {
+    function handleSubmit(event) {
         event.preventDefault()
-        console.log(name, email, message);
+
+        emailjs.sendForm('service_fv1hqki', 'template_8561ou3', form.current, 'CMEqEOQFYW767QDso')
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
     }
 
-    function handleChange(event) {
-        var tempName = event.target.name
-        var tempValue = event.target.value
-        if (tempName === "name") {
-            setName(tempValue)
-        }
-        else if (tempName === "email") {
-            setEmail(tempValue)
-        }
-        else {
-            setMessage(tempValue)
-        }
-    }
 
     return (
         <div className="contact">
             <div className="contact-card">
-                <form className="contact-form" onSubmit={handleFormSubmit}>
+                <form ref={form} className="contact-form" onSubmit={handleSubmit}>
                     <h2>CONTACT ME</h2>
-                    <p type="Name:"><input placeholder="Jane Doe" name="name" value={name} onChange={handleChange}></input></p>
-                    <p type="Email:"><input placeholder="JaneDoe@gmail.com" name="email" value={email} onChange={handleChange}></input></p>
-                    <p type="Message:"><textarea id="messageBox" placeholder="Let me know if my skills align with an open role in your organization" name="message" value={message} onChange={handleChange}></textarea></p>
-                    <button onClick={handleFormSubmit}>Send Message</button>
+                    <p type="Name:"><input placeholder="Jane Doe" name="name" ></input></p>
+                    <p type="Email:"><input placeholder="JaneDoe@gmail.com" name="email"></input></p>
+                    <p type="Message:"><textarea id="messageBox" placeholder="Let me know if my skills align with an open role in your organization" name="message" ></textarea></p>
+                    <button onClick={handleSubmit}>Send Message</button>
                 </form>
             </div>
         </div>
