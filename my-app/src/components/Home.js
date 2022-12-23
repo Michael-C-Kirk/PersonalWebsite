@@ -5,7 +5,7 @@ function Home() {
         <div className="home">
             <div className='greeting-card'>
                 <div className='greeting'>
-                    <h2>Hello, I'm</h2>
+                    <h1>Hello, I'm</h1>
                     <h1>Michael Kirk</h1>
                     <br></br>
                     <p>

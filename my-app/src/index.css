@@ -14,9 +14,19 @@ body {
 :root {
   --textcolor: black;
   --offwhite: #FAF9F6;
-  --darkgreen: #004643;
-  --secondarycolor: steelblue;
+  --headertext: #fffffe;
 
+  --cardbackground: #e8e4e6;
+  --headline: #001e1d;
+  --paragraph: #0f3433;
+
+  --primary: #004643;
+  --secondarycolor: #abd1c6;
+
+}
+
+p {
+  color: var(--paragraph);
 }
 
 /*~~~~~~~~~~~ navbar ~~~~~~~~~~~*/
@@ -26,16 +36,18 @@ li {
 
 .navbar {
   align-items: center;
-  background-color: var(--offwhite);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+  background-color: var(--secondarycolor);
+  border: 2px;
+  border-style: none none solid none;
+  box-shadow: 0 0 40px -10px #000;
   display: flex;
-  font-size: 26px;
   margin: 0 auto;
   height: 3vh;
   padding: 2vh;
   position: sticky;
   top: 0;
   z-index: 10;
+
 }
 
 .links-container {
@@ -46,15 +58,18 @@ li {
 
 .links {
   margin-right: auto;
+  font-size: x-large;
 }
 
 .links-container .links li {
   display: inline;
+  color: var(--headertext);
 }
 
 .socials {
   margin-left: auto;
   display: flex;
+  font-size: x-large;
 }
 
 .linkedin {
@@ -78,7 +93,7 @@ li {
 }
 
 .navbar a:hover {
-  color: var(--secondarycolor);
+  color: var(--primary);
 }
 
 .hamburger {
@@ -93,24 +108,26 @@ li {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: var(--secondarycolor);
+  background-color: var(--headline);
 }
 
 @media screen and (max-width: 768px) {
   .links-container ul {
-    position: absolute;
-    left: -75vw;
-    top: 5vh;
-    height: 100vh;
-    width: 40vw;
-    gap: 30px;
-    padding-top: 15vh;
+    align-items: flex-start;
+    background-color: var(--offwhite);
     display: flex;
     flex-direction: column;
-    background-color: var(--offwhite);
-    opacity: 95%;
+    font-size: large;
+    gap: 6.5vh;
     justify-content: flex-start;
-    align-items: stretch;
+    margin-left: 0;
+    opacity: 95%;
+    padding-top: 5vh;
+    position: absolute;
+    left: -75vw;
+    top: 7.4vh;
+    height: 40vh;
+    width: 180px;
   }
 
   .hamburger {
@@ -134,17 +151,25 @@ li {
 .home {
   align-items: center;
   background-size: cover;
-  background-image: linear-gradient(var(--secondarycolor), var(--offwhite));
+  background-image: linear-gradient(var(--offwhite), var(--primary));
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 
+.home h1 {
+  color: var(--headline);
+}
+
+.home p {
+  color: var(--paragraph);
+}
+
 .home .greeting-card {
   background: var(--offwhite);
   border-radius: .25rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
-  max-width: 40vw;
+  box-shadow: 0 0 40px -10px #000;
+  max-width: 60vw;
   margin-top: 1rem;
   overflow: hidden;
   min-width: 300px;
@@ -156,8 +181,6 @@ li {
   text-align: center;
   align-self: center;
 }
-
-.home .profile-pic-container {}
 
 .home .profile-pic {
   align-self: center;
@@ -172,22 +195,24 @@ li {
 }
 
 /*~~~~~~~~~~~ projects ~~~~~~~~~~~*/
+.projects-section {
+  background-color: var(--secondarycolor);
+}
+
 .projects-grid {
   align-items: flex-start;
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  min-height: 100vh;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .card {
   --padding: 1rem;
   background: var(--offwhite);
-  border-radius: .25rem;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
-  max-width: 500px;
+  border-radius: .5rem;
+  box-shadow: 0 0 40px -10px #000;
   overflow: hidden;
 }
 
@@ -204,12 +229,12 @@ li {
 }
 
 .card-title {
-  font-size: 1.5rem;
+  font-size: 1.6em;
   padding: 0 var(--padding);
 }
 
 .card-body {
-  font-size: .9rem;
+  font-size: .9em;
   padding: 0 var(--padding);
 }
 
@@ -249,17 +274,24 @@ li {
   color: var(--secondarycolor);
 }
 
-/*~~~~~~~~~~~ contact ~~~~~~~~~~~*/
-.contact {
-  background-color: #3a3a3a;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100%;
+@media screen and (max-width: 1300px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
 }
 
-.contact-card {}
+/*~~~~~~~~~~~ contact ~~~~~~~~~~~*/
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 90vh;
+  padding-top: 15vh;
+  background-color: var(--primary);
+  z-index: -12;
+}
 
 .contact-form {
   width: 60vw;
@@ -271,15 +303,15 @@ li {
   padding: 20px 30px;
   max-width: calc(100vw - 40px);
   box-sizing: border-box;
-  position: relative
+  position: relative;
 }
 
 .contact-form h2 {
   margin: 10px 0;
   padding-bottom: 10px;
-  width: 180px;
-  color: var(--secondarycolor);
-  border-bottom: 3px solid var(--secondarycolor);
+  width: 10rem;
+  color: var(--primary);
+  border-bottom: 3px solid var(--headline);
 }
 
 .contact-form input {
@@ -295,24 +327,24 @@ li {
 }
 
 .contact-form input:focus {
-  border-bottom: 2px solid var(--secondarycolor);
+  border-bottom: 2px solid var(--primary);
 }
 
 .contact-form p::before {
   content: attr(type);
   display: block;
   margin: 28px 0 0;
-  font-size: 14px;
-  color: var(--secondarycolor);
+  font-size: 18px;
+  color: var(--headline);
 }
 
 .contact-form button {
   float: right;
   padding: 8px 12px;
   margin: 25px 0 0;
-  border: 2px solid var(--secondarycolor);
+  border: 2px solid var(--headline);
   background: 0;
-  color: var(--secondarycolor);
+  color: var(--headline);
   cursor: pointer;
   transition: all .3s
 }
@@ -342,7 +374,7 @@ li {
 }
 
 #messageBox {
-  width: 52vw;
-  height: 18vh;
-  outline: var(--secondarycolor);
+  width: 100%;
+  height: 100%;
+  outline: var(--headline);
 }
