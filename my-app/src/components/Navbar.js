@@ -57,18 +57,18 @@ function Navbar() {
             <div className="links-container">
                 <ul className="links" ref={linksRef}>
                     <li>
-                        <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-50} duration={500}>
+                        <Link activeClass="active" to="Home" spy={true} smooth={true} offset={-100} duration={500}>
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-50} duration={500}>
+                        <Link activeClass="active" to="Projects" spy={true} smooth={true} offset={-55} duration={500}>
                             Projects
                         </Link>
                     </li>
                     <li><a href="/technicalskills">Technical Skills</a></li>
                     <li>
-                        <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-50} duration={500}>
+                        <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-55} duration={500}>
                             Contact
                         </Link>
                     </li>
