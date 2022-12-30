@@ -9,9 +9,9 @@ function Home() {
                     <h1>Michael Kirk</h1>
                     <br></br>
                     <p>
-                        Bachelors of Science from the University of California Irvine.
+                        BSc in Computer Game Science from UC Irvine.
                         <br></br>
-                        Seeking full time employment for software engineer and related postions.
+                        Seeking full time employment for entry-level software engineer and related postions.
                     </p>
                 </div>
             </div>
