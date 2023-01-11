@@ -65,7 +65,11 @@ function Navbar() {
                             Projects
                         </Link>
                     </li>
-                    <li><a href="/technicalskills">Skills</a></li>
+                    <li>
+                        <Link activeClass="active" to="Skills" spy={true} smooth={true} offset={-55} duration={500}>
+                            Skills
+                        </Link>
+                    </li>
                     <li>
                         <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-55} duration={500}>
                             Contact
