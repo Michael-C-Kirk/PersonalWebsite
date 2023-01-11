@@ -1,4 +1,3 @@
-import { isInaccessible } from "@testing-library/react";
 import { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { IconContext } from "react-icons";
 import { BsGithub, BsLinkedin, BsFillFilePdfFill } from "react-icons/bs";
@@ -66,7 +65,7 @@ function Navbar() {
                             Projects
                         </Link>
                     </li>
-                    <li><a href="/technicalskills">Technical Skills</a></li>
+                    <li><a href="/technicalskills">Skills</a></li>
                     <li>
                         <Link activeClass="active" to="Contact" spy={true} smooth={true} offset={-55} duration={500}>
                             Contact
